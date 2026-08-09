@@ -1766,7 +1766,7 @@ main {
 }
 
 .portfolio {
-  background-image: url(../../../img/portfolio-bg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.709)), url(../../../img/portfolio-bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -1784,6 +1784,7 @@ main {
 
 .info {
   padding-top: 100px;
+  padding-bottom: 200px;
 }
 .info .container {
   padding-right: 144px;
