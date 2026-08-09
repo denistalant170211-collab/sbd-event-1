@@ -295,11 +295,43 @@ a {
     padding-bottom: 48px;
   }
 }
+.start_about_container {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-template-areas: "photo title" "chat chat" "info info" "btn btn";
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  row-gap: 20px;
+}
+@media screen and (min-width: 724px) {
+  .start_about_container {
+    grid-template-columns: 212px 1fr;
+    grid-template-areas: "photo title" "photo info" "chat  btn";
+    -moz-column-gap: 32px;
+         column-gap: 32px;
+    row-gap: 24px;
+    align-items: start;
+  }
+}
+@media screen and (min-width: 1380px) {
+  .start_about_container {
+    grid-template-columns: 210px 1fr auto;
+    grid-template-areas: "photo title chat" "photo info  chat" "photo btn   .";
+    -moz-column-gap: 40px;
+         column-gap: 40px;
+    row-gap: 24px;
+  }
+}
+.start_about_photo {
+  grid-area: photo;
+}
 .start_about_img {
   border: 2px solid #f8f1e9;
   border-radius: 8px;
-  width: 224px;
-  height: 240px;
+  width: 120px;
+  height: 140px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media screen and (min-width: 724px) {
   .start_about_img {
@@ -314,15 +346,29 @@ a {
   }
 }
 .start_about_title {
+  grid-area: title;
+  align-self: center;
   font-weight: 500;
   font-size: 24px;
   line-height: 133%;
   color: #a76e00;
 }
+.start_about_title::before {
+  content: "";
+  display: block;
+  width: 88px;
+  height: 2px;
+  margin-bottom: 16px;
+  background-color: #a76e00;
+}
 @media screen and (min-width: 724px) {
   .start_about_title {
+    align-self: start;
     font-size: 40px;
     line-height: 120%;
+  }
+  .start_about_title::before {
+    content: none;
   }
 }
 @media screen and (min-width: 1380px) {
@@ -331,10 +377,136 @@ a {
     line-height: 114%;
   }
 }
-.start_about_photo {
+.start_about_info {
+  grid-area: info;
+}
+@media screen and (min-width: 1380px) {
+  .start_about_info {
+    display: flex;
+    align-items: center;
+  }
+  .start_about_info::before {
+    content: "";
+    flex-shrink: 0;
+    width: 90px;
+    height: 2px;
+    margin-right: 24px;
+    background-color: #a76e00;
+  }
+}
+.start_about_text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #3d3c39;
+}
+@media screen and (min-width: 724px) {
+  .start_about_text {
+    font-size: 16px;
+    line-height: 155%;
+  }
+}
+@media screen and (min-width: 1380px) {
+  .start_about_text {
+    flex: 1 1 auto;
+    min-width: 0;
+    line-height: 175%;
+  }
+}
+.start_about_btn {
+  grid-area: btn;
+  display: block;
+  background-color: #f8f1e9;
+  text-align: center;
+  color: #04867e;
+  border-radius: 4px;
+  padding: 12px;
+  width: 343px;
+  height: 42px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+}
+@media screen and (min-width: 724px) {
+  .start_about_btn {
+    display: none;
+  }
+}
+@media screen and (min-width: 1380px) {
+  .start_about_btn {
+    display: block;
+    border-bottom: 1px solid #3d3c39;
+    padding: 10px 16px;
+    width: 240px;
+    font-size: 18px;
+    line-height: 122%;
+    background-color: #fdfdfd;
+    margin-left: auto;
+  }
+}
+.start_about_chat {
+  grid-area: chat;
   display: flex;
-  align-items: center;
-  margin-bottom: 8px;
+  flex-direction: column;
+  gap: 12px;
+}
+@media screen and (min-width: 724px) {
+  .start_about_chat {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 1380px) {
+  .start_about_chat {
+    align-items: flex-end;
+    text-align: right;
+  }
+}
+.start_about_item_1 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: #3e1063;
+}
+@media screen and (min-width: 1380px) {
+  .start_about_item_1 {
+    font-size: 16px;
+  }
+}
+.start_about_btn2 {
+  display: block;
+  border: none;
+  background-color: #f8f1e9;
+  color: #04867e;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 12px 16px;
+  width: 343px;
+  height: 42px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+}
+@media screen and (min-width: 724px) {
+  .start_about_btn2 {
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 14px 40px;
+    border: 1px solid #3d3c39;
+    background-color: transparent;
+    width: 200px;
+    font-size: 16px;
+    line-height: 113%;
+  }
+}
+@media screen and (min-width: 1380px) {
+  .start_about_btn2 {
+    border: 1px solid #3d3c39;
+    padding: 10px 43px;
+    width: 240px;
+    font-size: 18px;
+    line-height: 122%;
+  }
 }
 
 .protocol {
